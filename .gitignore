@@ -8,6 +8,7 @@ __pycache__/
 
 *.csv
 *.pdf
+*.txt
 
 # Distribution / packaging
 .Python
