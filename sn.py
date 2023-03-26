@@ -4,7 +4,7 @@ import pandas as pd
 import os, json, csv
 
 
-output_file_name = 'all_tweets.csv'
+output_file_name = 'dataset_1.csv'
 header = ['tweet_url', 'date', 'tweet_id', 'user_name', 'is_user_verified', 'user_followers', 'user_following', 'user_tot_status', 'user_location', 'user_description', 'user_label', 'user_url', 'reply_count', 'retweet_count', 'like_count', 'quote_count', 'conversation_id', 'lang', 'source_label', 'coordinates', 'place', 'hashtags', 'cashtags', 'view_count', 'tweet_content']
 
 def open_or_create_csv():
