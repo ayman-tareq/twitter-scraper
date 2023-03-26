@@ -1,0 +1,228 @@
+{
+  "_type": "snscrape.modules.twitter.Tweet",
+  "url": "https://twitter.com/saada186/status/1496704526790930433",
+  "date": "2022-02-24T04:32:21+00:00",
+  "rawContent": "#NewsBreak \n\n#Stocks dive, #oil surges as #Putin issues warning on #Ukraine  \n#pakustv #NYC #politics #Economy #russiaukrainewar #Oilprices #markets #business #WWIII \nhttps://t.co/UBM9smaFK4",
+  "renderedContent": "#NewsBreak \n\n#Stocks dive, #oil surges as #Putin issues warning on #Ukraine  \n#pakustv #NYC #politics #Economy #russiaukrainewar #Oilprices #markets #business #WWIII \nreuters.com/markets/europe\u2026",
+  "id": 1496704526790930433,
+  "user": {
+    "_type": "snscrape.modules.twitter.User",
+    "username": "saada186",
+    "id": 942797970,
+    "displayname": "Ch.Amjad Ali",
+    "rawDescription": "#ProudPakistani #LovePakArmy #PMIK #InternationalRelations \n#PoliticalScience #InternationalAffairs \n#PAKUSTV #Newyork #Islamabad",
+    "renderedDescription": "#ProudPakistani #LovePakArmy #PMIK #InternationalRelations \n#PoliticalScience #InternationalAffairs \n#PAKUSTV #Newyork #Islamabad",
+    "descriptionLinks": null,
+    "verified": false,
+    "created": "2012-11-12T04:18:12+00:00",
+    "followersCount": 761,
+    "friendsCount": 2484,
+    "statusesCount": 31045,
+    "favouritesCount": 53963,
+    "listedCount": 4,
+    "mediaCount": 3445,
+    "location": "Islamabad",
+    "protected": false,
+    "link": {
+      "_type": "snscrape.modules.twitter.TextLink",
+      "text": "pakustv.com",
+      "url": "http://pakustv.com",
+      "tcourl": "https://t.co/2RpPLNHTDu",
+      "indices": [
+        0,
+        23
+      ]
+    },
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/944956320800821248/CtaU-roa_normal.jpg",
+    "profileBannerUrl": "https://pbs.twimg.com/profile_banners/942797970/1493617974",
+    "label": null,
+    "description": "#ProudPakistani #LovePakArmy #PMIK #InternationalRelations \n#PoliticalScience #InternationalAffairs \n#PAKUSTV #Newyork #Islamabad",
+    "descriptionUrls": null,
+    "linkTcourl": "https://t.co/2RpPLNHTDu",
+    "linkUrl": "http://pakustv.com",
+    "url": "https://twitter.com/saada186"
+  },
+  "replyCount": 0,
+  "retweetCount": 0,
+  "likeCount": 0,
+  "quoteCount": 0,
+  "conversationId": 1496704526790930433,
+  "lang": "en",
+  "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+  "sourceUrl": "https://mobile.twitter.com",
+  "sourceLabel": "Twitter Web App",
+  "links": [
+    {
+      "_type": "snscrape.modules.twitter.TextLink",
+      "text": "reuters.com/markets/europe\u2026",
+      "url": "https://www.reuters.com/markets/europe/global-markets-wrapup-1pix-2022-02-24/",
+      "tcourl": "https://t.co/UBM9smaFK4",
+      "indices": [
+        167,
+        190
+      ]
+    }
+  ],
+  "media": null,
+  "retweetedTweet": null,
+  "quotedTweet": null,
+  "inReplyToTweetId": null,
+  "inReplyToUser": null,
+  "mentionedUsers": null,
+  "coordinates": null,
+  "place": null,
+  "hashtags": [
+    "NewsBreak",
+    "Stocks",
+    "oil",
+    "Putin",
+    "Ukraine",
+    "pakustv",
+    "NYC",
+    "politics",
+    "Economy",
+    "russiaukrainewar",
+    "Oilprices",
+    "markets",
+    "business",
+    "WWIII"
+  ],
+  "cashtags": null,
+  "card": {
+    "_type": "snscrape.modules.twitter.SummaryCard",
+    "title": "Investors regain risk appetite; dollar, oil pare gains after Ukraine invasion",
+    "url": "https://www.reuters.com/markets/europe/global-markets-wrapup-1pix-2022-02-24/",
+    "description": "Investors rediscovered much of their appetite for riskier bets by Thursday afternoon with the MSCI global index finishing well above its session low and the U.S. dollar paring gains while oil futures...",
+    "thumbnailUrl": "https://pbs.twimg.com/card_img/1639960276379287554/HS7ppFuY?format=jpg&name=orig",
+    "siteUser": {
+      "_type": "snscrape.modules.twitter.User",
+      "username": "Reuters",
+      "id": 1652541,
+      "displayname": "Reuters",
+      "rawDescription": "Top and breaking news, pictures and videos from Reuters. For more breaking business news, follow @ReutersBiz. Our new daily podcast is here: https://t.co/KO0QFy0d3a",
+      "renderedDescription": "Top and breaking news, pictures and videos from Reuters. For more breaking business news, follow @ReutersBiz. Our new daily podcast is here: rwn.app.link/social",
+      "descriptionLinks": [
+        {
+          "_type": "snscrape.modules.twitter.TextLink",
+          "text": "rwn.app.link/social",
+          "url": "http://rwn.app.link/social",
+          "tcourl": "https://t.co/KO0QFy0d3a",
+          "indices": [
+            141,
+            164
+          ]
+        }
+      ],
+      "verified": true,
+      "created": "2007-03-20T17:46:05+00:00",
+      "followersCount": 25742294,
+      "friendsCount": 1240,
+      "statusesCount": 992371,
+      "favouritesCount": 744,
+      "listedCount": 137451,
+      "mediaCount": 757547,
+      "location": "Around the world",
+      "protected": false,
+      "link": {
+        "_type": "snscrape.modules.twitter.TextLink",
+        "text": "reuters.com",
+        "url": "http://www.reuters.com",
+        "tcourl": "https://t.co/U9AvHD5r3e",
+        "indices": [
+          0,
+          23
+        ]
+      },
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1194751949821939712/3VBu4_Sa_normal.jpg",
+      "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1652541/1573687397",
+      "label": null,
+      "description": "Top and breaking news, pictures and videos from Reuters. For more breaking business news, follow @ReutersBiz. Our new daily podcast is here: rwn.app.link/social",
+      "descriptionUrls": [
+        {
+          "_type": "snscrape.modules.twitter.TextLink",
+          "text": "rwn.app.link/social",
+          "url": "http://rwn.app.link/social",
+          "tcourl": "https://t.co/KO0QFy0d3a",
+          "indices": [
+            141,
+            164
+          ]
+        }
+      ],
+      "linkTcourl": "https://t.co/U9AvHD5r3e",
+      "linkUrl": "http://www.reuters.com",
+      "url": "https://twitter.com/Reuters"
+    },
+    "creatorUser": {
+      "_type": "snscrape.modules.twitter.User",
+      "username": "Reuters",
+      "id": 1652541,
+      "displayname": "Reuters",
+      "rawDescription": "Top and breaking news, pictures and videos from Reuters. For more breaking business news, follow @ReutersBiz. Our new daily podcast is here: https://t.co/KO0QFy0d3a",
+      "renderedDescription": "Top and breaking news, pictures and videos from Reuters. For more breaking business news, follow @ReutersBiz. Our new daily podcast is here: rwn.app.link/social",
+      "descriptionLinks": [
+        {
+          "_type": "snscrape.modules.twitter.TextLink",
+          "text": "rwn.app.link/social",
+          "url": "http://rwn.app.link/social",
+          "tcourl": "https://t.co/KO0QFy0d3a",
+          "indices": [
+            141,
+            164
+          ]
+        }
+      ],
+      "verified": true,
+      "created": "2007-03-20T17:46:05+00:00",
+      "followersCount": 25742294,
+      "friendsCount": 1240,
+      "statusesCount": 992371,
+      "favouritesCount": 744,
+      "listedCount": 137451,
+      "mediaCount": 757547,
+      "location": "Around the world",
+      "protected": false,
+      "link": {
+        "_type": "snscrape.modules.twitter.TextLink",
+        "text": "reuters.com",
+        "url": "http://www.reuters.com",
+        "tcourl": "https://t.co/U9AvHD5r3e",
+        "indices": [
+          0,
+          23
+        ]
+      },
+      "profileImageUrl": "https://pbs.twimg.com/profile_images/1194751949821939712/3VBu4_Sa_normal.jpg",
+      "profileBannerUrl": "https://pbs.twimg.com/profile_banners/1652541/1573687397",
+      "label": null,
+      "description": "Top and breaking news, pictures and videos from Reuters. For more breaking business news, follow @ReutersBiz. Our new daily podcast is here: rwn.app.link/social",
+      "descriptionUrls": [
+        {
+          "_type": "snscrape.modules.twitter.TextLink",
+          "text": "rwn.app.link/social",
+          "url": "http://rwn.app.link/social",
+          "tcourl": "https://t.co/KO0QFy0d3a",
+          "indices": [
+            141,
+            164
+          ]
+        }
+      ],
+      "linkTcourl": "https://t.co/U9AvHD5r3e",
+      "linkUrl": "http://www.reuters.com",
+      "url": "https://twitter.com/Reuters"
+    }
+  },
+  "viewCount": null,
+  "vibe": null,
+  "content": "#NewsBreak \n\n#Stocks dive, #oil surges as #Putin issues warning on #Ukraine  \n#pakustv #NYC #politics #Economy #russiaukrainewar #Oilprices #markets #business #WWIII \nhttps://t.co/UBM9smaFK4",
+  "outlinks": [
+    "https://www.reuters.com/markets/europe/global-markets-wrapup-1pix-2022-02-24/"
+  ],
+  "outlinksss": "https://www.reuters.com/markets/europe/global-markets-wrapup-1pix-2022-02-24/",
+  "tcooutlinks": [
+    "https://t.co/UBM9smaFK4"
+  ],
+  "tcooutlinksss": "https://t.co/UBM9smaFK4",
+  "username": "saada186"
+}
