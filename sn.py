@@ -1,78 +1,94 @@
 
 import snscrape.modules.twitter as sntwitter
 import pandas as pd
-import os
+import os, json, csv
 
-# Creating list to append tweet data to
-tweets_list2 = []
-# keyword_format = '#economy lang:en until:2022-08-31 since:2017-08-01'
-keyword_format = '#economy #RussiaUkraineWar'
-# keyword_format = '#bitcoin lang:en until:2022-03-31 since:2021-06-01 near:UK'
-limit = 100
 
-keyword_format='#economy since:2022-02-24'
+output_file_name = 'all_tweets.csv'
+header = ['tweet_url', 'date', 'tweet_id', 'user_name', 'is_user_verified', 'user_followers', 'user_following', 'user_tot_status', 'user_location', 'user_description', 'user_label', 'user_url', 'reply_count', 'retweet_count', 'like_count', 'quote_count', 'conversation_id', 'lang', 'source_label', 'coordinates', 'place', 'hashtags', 'cashtags', 'view_count', 'tweet_content']
 
-# Using TwitterSearchScraper to scrape data and append tweets to list
+def open_or_create_csv():
+    global csv_f, writer
+    output_file_path = os.path.join(os.getcwd(), output_file_name)
+    output_file_exists = os.path.exists(output_file_path)
+    if output_file_exists:
+        mde = 'a'
+    else:
+        mde = 'w'
 
+    csv_f = open(output_file_path, mde, encoding='utf-8', newline='')
+    writer = csv.writer(csv_f)
+    if mde == 'w':
+        writer.writerow(header)
+
+open_or_create_csv()
+
+
+# keyword_format = '#RussiaUkraineWar (#economy OR #worldeconomy) until:2022-02-23 since:2022-01-01'
+keyword_format = '(#economy OR #worldeconomy) until:2017-12-31 since:2017-01-01'
+
+limit = 100000
 n = 0
 
+
 for i,tweet in enumerate(sntwitter.TwitterSearchScraper(query=keyword_format).get_items()):
+
     if n>limit:
         break
-    # print(tweet)
-    # try:
-    #     if tweet.place.country != 'United Kingdom':
-    #         continue
-    # except:
-    #     continue
-    l = [tweet.date, tweet.id, tweet.content, tweet.user.username, tweet.url]
-    # try:
-    #   tweet.place.country
-    # except:
-    #   print('\n\tcountry not found!')
-    #   continue
-    # l = [tweet.date, tweet.id, tweet.content, tweet.user.username, tweet.place.country, tweet.url]
-    tweets_list2.append(l)
-    print(n, '||', i, l)
-    n += 1
+    n+=1
     
-# Creating a dataframe from the tweets list above
-# tweets_df2 = pd.DataFrame(tweets_list2, columns=['Datetime', 'Tweet Id', 'Text', 'Username', 'Ref'])
-tweets_df2 = pd.DataFrame(tweets_list2)
-# tweets_df2 = pd.DataFrame(tweets_list2, columns=['Datetime', 'Tweet Id', 'Text', 'Username', 'Country', 'Ref'])
+    json_obj = tweet.json()
+    json_obj = json.loads(json_obj, cls=json.JSONDecoder)
+    # print('\n\tJson object created...')
+    
+    # ----------------- Tweet Data -----------------
+    tweet_url = json_obj.get('url')
+    date = json_obj.get('date')
+    tweet_id = json_obj.get('id')
+    user_name = json_obj.get('user').get('username')
+    is_user_verified = json_obj.get('user').get('verified')
 
-output_file_name = 'economy.csv'
-if os.path.exists(output_file_name):
-    mode = 'a'
-    header = False
-else:
-    mode = 'w'
-    header = True
+    user_followers = json_obj.get('user').get('followersCount')
+    user_following = json_obj.get('user').get('friendsCount')
+    user_tot_status = json_obj.get('user').get('statusesCount')
+    user_location = json_obj.get('user').get('location')
+    user_description = json_obj.get('user').get('renderedDescription')
 
-tweets_df2.to_csv(output_file_name, index=False, mode='a', header=header, encoding='utf-8')
-# tweets_df2.to_excel('sample tweet.xlsx', index=False)
-# df = pd.read_csv(output_file_name)
-tweets_df2.duplicated(4).sum()
-tweets_df2.drop_duplicates(4, inplace=True)
-tweets_df2.to_csv(output_file_name, index=False)
+    user_label = json_obj.get('user').get('label')
+    user_url = json_obj.get('user').get('url')
+    reply_count = json_obj.get('replyCount')
+    retweet_count = json_obj.get('retweetCount')
+    like_count = json_obj.get('likeCount')
 
-print('\n\tDone!')
+    quote_count = json_obj.get('quoteCount')
+    conversation_id = json_obj.get('conversationId')
+    lang = json_obj.get('lang')
+    source_label = json_obj.get('sourceLabel')
+    coordinates = json_obj.get('coordinates')
 
+    place = json_obj.get('place')
+    hashtags = json_obj.get('hashtags')
+    cashtags = json_obj.get('cashtags')
+    view_count = json_obj.get('viewCount')
+    tweet_content = json_obj.get('content')
+    
+    l = [
+        tweet_url, date, tweet_id, user_name, is_user_verified, 
+        user_followers, user_following, user_tot_status, user_location, user_description, 
+        user_label, user_url, reply_count, retweet_count, like_count, 
+        quote_count, conversation_id, lang, source_label, coordinates, 
+        place, hashtags, cashtags, view_count, tweet_content]
+    
+    writer.writerow(l)
+    csv_f.close()
+    open_or_create_csv()
+    print(f'\t{i+1} - {date} - {tweet_url} - {user_location} - {place} - {lang}')
+    
 
-# from datetime import date
+csv_f.close()
 
-# today = date.today()
-# end_date = today
-
-# search_term = '#Pedro'
-# from_date = '2022-05-19'
-
-
-# os.system(f"snscrape twitter-search #economy > result-tweets.csv")
-# if os.stat("result-tweets.csv").st_size == 0:
-#   counter = 0
-# else:
-#   df = pd.read_csv('result-tweets.csv', names=['link'])
-#   counter = df.size
-
-# print('Number Of Tweets : '+ str(counter))
+df = pd.read_csv(output_file_name, encoding='utf-8')
+df.duplicated(['tweet_id']).sum()
+df.drop_duplicates(subset=['tweet_id'], inplace=True)
+df.to_csv(output_file_name, index=False, encoding='utf-8')
+print('\n\tDone! total tweets:', len(df))
