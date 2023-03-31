@@ -4,7 +4,7 @@ import pandas as pd
 import os, json, csv
 
 
-output_file_name = 'dataset_1.csv'
+output_file_name = 'dataset_8.csv'
 header = ['tweet_url', 'date', 'tweet_id', 'user_name', 'is_user_verified', 'user_followers', 'user_following', 'user_tot_status', 'user_location', 'user_description', 'user_label', 'user_url', 'reply_count', 'retweet_count', 'like_count', 'quote_count', 'conversation_id', 'lang', 'source_label', 'coordinates', 'place', 'hashtags', 'cashtags', 'view_count', 'tweet_content']
 
 def open_or_create_csv():
@@ -24,18 +24,18 @@ def open_or_create_csv():
 open_or_create_csv()
 
 
-# keyword_format = '#RussiaUkraineWar (#economy OR #worldeconomy) until:2022-02-23 since:2022-01-01'
-keyword_format = '(#economy OR #worldeconomy) until:2017-12-31 since:2017-01-01'
+keyword_format = '#RussiaUkraineWar #economy until:2023-12-31 since:2023-01-01'
+# keyword_format = '(#economy OR #worldeconomy) until:2022-02-23 since:2022-01-01'
 
-limit = 100000
-n = 0
+# limit = 200000
+# n = 0
 
 
 for i,tweet in enumerate(sntwitter.TwitterSearchScraper(query=keyword_format).get_items()):
 
-    if n>limit:
-        break
-    n+=1
+    # if n>limit:
+    #     break
+    # n+=1
     
     json_obj = tweet.json()
     json_obj = json.loads(json_obj, cls=json.JSONDecoder)
@@ -92,3 +92,14 @@ df.duplicated(['tweet_id']).sum()
 df.drop_duplicates(subset=['tweet_id'], inplace=True)
 df.to_csv(output_file_name, index=False, encoding='utf-8')
 print('\n\tDone! total tweets:', len(df))
+
+
+#merge all csv files in the same folder
+import glob
+import pandas as pd
+
+extension = 'csv'
+all_filenames = [i for i in glob.glob('*.{}'.format(extension))]
+combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames ])
+
+combined_csv.to_csv( "950k_combined_dataset.csv", index=False, encoding='utf-8')
